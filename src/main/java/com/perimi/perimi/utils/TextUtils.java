@@ -1,4 +1,4 @@
-package utils;
+package com.perimi.perimi.utils;
 
 public class TextUtils {
 

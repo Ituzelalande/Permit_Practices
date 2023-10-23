@@ -1,4 +1,4 @@
-package model;
+package com.perimi.perimi.model;
 
 import lombok.Data;
 
