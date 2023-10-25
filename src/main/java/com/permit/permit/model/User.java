@@ -1,9 +1,10 @@
-package com.perimi.perimi.model;
+package com.permit.permit.model;
 
 import lombok.Data;
 
 @Data
 public class User {
+
     String user_id;
     String user_full_name;
     String user_email;
@@ -13,4 +14,5 @@ public class User {
     String user_account_id;
     String user_birth_date;
     String user_password;
+
 }

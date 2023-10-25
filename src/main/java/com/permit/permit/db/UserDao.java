@@ -1,7 +1,7 @@
-package com.perimi.perimi.db;
+package com.permit.permit.db;
 
-import com.perimi.perimi.model.User;
-import com.perimi.perimi.utils.DataBaseUtils;
+import com.permit.permit.model.User;
+import com.permit.permit.utils.DataBaseUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

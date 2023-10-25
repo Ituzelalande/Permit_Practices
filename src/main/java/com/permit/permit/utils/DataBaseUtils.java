@@ -1,4 +1,4 @@
-package com.perimi.perimi.utils;
+package com.permit.permit.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

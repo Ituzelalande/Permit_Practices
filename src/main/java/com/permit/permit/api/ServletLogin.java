@@ -1,21 +1,22 @@
-package com.perimi.perimi.api;
+package com.permit.permit.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.perimi.perimi.db.UserDao;
-import com.perimi.perimi.model.User;
-import com.perimi.perimi.utils.TextUtils;
+import com.permit.permit.db.UserDao;
+import com.permit.permit.model.User;
+import com.permit.permit.utils.TextUtils;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Login", value = "/api/v1/login")
+@WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String message = "";
         boolean success = false;
 
@@ -70,6 +71,7 @@ public class ServletLogin extends HttpServlet {
 
 
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

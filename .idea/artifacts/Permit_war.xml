@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="perimi:war">
+  <artifact type="war" name="Permit:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>perimi</module>
+        <module>Permit</module>
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="perimi-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="perimi:war exploded" />
+    <root id="archive" name="Permit-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Permit:war exploded" />
     </root>
   </artifact>
 </component>
