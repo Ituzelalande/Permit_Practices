@@ -12,7 +12,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "ServletLogin", value = "/ServletLogin")
+@WebServlet(name = "ServletLogin", value = "/api/v1/login")
 public class ServletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,17 +38,15 @@ public class ServletLogin extends HttpServlet {
                 message="password is required";
             } else {
                 UserDao userDao = new UserDao();
-                User user = userDao.getUser(user_email, user_password);
+                User user = userDao.login(user_email, user_password);
                 if (user == null) {
                     message = "User not exist";
                 }else {
-                    User user1 = userDao.getUser(user_email, user_password);
+                    User user1 = userDao.login(user_email, user_password);
                     if(user1!=null){
 
-                        user1= new User();
                         jsonData.addProperty("user_full_name",user1.getUser_full_name());
                         jsonData.addProperty("user_email",user1.getUser_email());
-                        jsonData.addProperty("user_id",user1.getUser_id());
                         jsonData.addProperty("user_phone",user1.getUser_phone());
 
                     }
