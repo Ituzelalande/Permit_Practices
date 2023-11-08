@@ -8,7 +8,7 @@ public class DataBaseUtils {
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
 
-        String urls = "jdbc:mysql://localhost:3306/perimi";
+        String urls = "jdbc:mysql://localhost:3307/perimi";
         String userName = "root";
         String passcode = "";
 

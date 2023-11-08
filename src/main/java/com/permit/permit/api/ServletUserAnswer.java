@@ -3,7 +3,9 @@ package com.permit.permit.api;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import com.permit.permit.db.QuestionDao;
 import com.permit.permit.db.User_answerDao;
+import com.permit.permit.model.Question;
 import com.permit.permit.model.User_answer;
 import com.permit.permit.utils.TextUtils;
 import jakarta.servlet.*;
@@ -11,8 +13,9 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-@WebServlet(name = "ServletUserAnswer", value = "/ServletUserAnswer")
+@WebServlet(name = "ServletUserAnswer", value = "/api/v1/userAnswer")
 public class ServletUserAnswer extends HttpServlet {
 
     @Override
@@ -25,6 +28,7 @@ public class ServletUserAnswer extends HttpServlet {
         String user_ans_choice = request.getParameter("user_ans_choice");
         String user_ans_question_id = request.getParameter("user_ans_question_id");
 
+
         JsonObject jsonData = new JsonObject();
         JsonObject jsonResponse = new JsonObject();
 
@@ -35,19 +39,32 @@ public class ServletUserAnswer extends HttpServlet {
         try{
             if(TextUtils.isEmpty(user_ans_user_id)){
                 message="user_ans_user_id is empty";
-            }else {
+            } else if (TextUtils.isEmpty(user_ans_choice)) {
+                message="select your choice";
+            } else {
+                QuestionDao questionDao = new QuestionDao();
+                Question question = questionDao.viewQuestions(user_ans_question_id);
+                boolean isCorrect =user_ans_choice.equals(question.getQuestion_answer());
+
                 User_answerDao user_answerDao = new User_answerDao();
-                User_answer answer = user_answerDao.addAnswer(user_ans_user_id, user_ans_choice, user_ans_question_id );
+                User_answer answer = user_answerDao.addAnswer(user_ans_user_id,user_ans_question_id, user_ans_choice,isCorrect);
+
 
                 if(answer!=null) {
 
                     jsonData.addProperty("user_ans_user_id", answer.getUser_ans_user_id());
                     jsonData.addProperty("user_ans_choice", answer.getUser_ans_choice());
                     jsonData.addProperty("user_ans_question_id", answer.getUser_ans_question_id());
-                }
 
-                success = true;
-                message = "answer inserted successfully";
+                    if (isCorrect) {
+                        message = "your answer is correct";
+                        success = true;
+
+                    } else {
+                        message = "sorry not correct";
+                    }
+
+                }
             }
 
         }catch(Exception e){

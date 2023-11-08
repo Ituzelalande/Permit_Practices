@@ -8,11 +8,11 @@ import java.sql.Statement;
 
 public class User_answerDao {
 
-    public User_answer addAnswer(String user_ans_user_id,String user_ans_question_id,String user_ans_choice) throws SQLException, ClassNotFoundException {
+    public User_answer addAnswer(String user_ans_user_id,String user_ans_question_id,String user_ans_choice,boolean isCorrect) throws SQLException, ClassNotFoundException {
         User_answer answer = new User_answer();
 
         Statement statement = DataBaseUtils.getConnection().createStatement();
-        String query = "insert into `user_answers` (`user_ans_user_id`,`user_ans_question_id`,`user_ans_choice_`) values ('"+user_ans_user_id+"','"+user_ans_question_id+"',' "+user_ans_choice+"')";
+        String query = "insert into `user_answers` (`user_ans_user_id`,`user_ans_question_id`,`user_ans_choice`,`is_correct`) values ('"+user_ans_user_id+"','"+user_ans_question_id+"',' "+user_ans_choice+"','"+isCorrect+"')";
         statement.execute(query);
 
         if(true){
