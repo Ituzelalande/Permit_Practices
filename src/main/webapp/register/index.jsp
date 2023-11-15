@@ -1,4 +1,4 @@
-<%@ page import="com.permit.permit.db.UserDao" %>
+%@ page import="com.permit.permit.db.UserDao" %>
 <%@ page import="com.permit.permit.model.User" %><%--
   Created by IntelliJ IDEA.
   User: AIONEM.NET
@@ -12,9 +12,17 @@
 <head>
     <title>Register</title>
     <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <div class="div">
+
+    <h2 class="h">Permit</h2>
+
+    <span><img src="google.jpeg"> Continue With Google </span>
+
+    <p><hr> OR</p>
     <h2> SignUp</h2>
     <form action="${pageContext.request.contextPath}/api/v1/register" method="post">
         <input type="text" id="user_full_name" name="user_full_name" placeholder="Your Full Name"><br><br>

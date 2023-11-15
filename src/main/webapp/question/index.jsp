@@ -9,19 +9,37 @@
 <html>
 <head>
     <title>questions</title>
+    <link rel="stylesheet" href="question.css">
 </head>
 <body>
-<div>
+<div class="div">
+    <h2><b>CREATE QUESTIONS</b></h2>
 <form action="${pageContext.request.contextPath}/api/v1/question" method="post">
-    <input type="text" name="question_title_rw" value=""> Title<br><br>
-    <input type="text" name="question_choice_a" value=""> A<br>
-    <input type="text" name="question_choice_b" value=""> B<br>
-    <input type="text" name="question_choice_c" value=""> C<br>
-    <input type="text" name="question_choice_d" value=""> D<br>
-    <input type="text" name="question_answer" value=""> Answer<br>
-    <input type="text" name="question_category_id" value=""> category<br>
+    <div>
+        <input type="text" name="question_title_rw" value="">  <b>:Title</b><br><br>
+    </div>
+    <div>
+        <input type="text" name="question_choice_a" value="">  <b>:A</b><br>
+    </div><br>
+    <div>
+        <input type="text" name="question_choice_b" value="">  <b>:B</b><br>
+    </div><br>
+    <div>
+        <input type="text" name="question_choice_c" value="">  <b>:C</b><br>
+    </div><br>
+    <div>
+        <input type="text" name="question_choice_d" value="">  <b>:D</b><br>
+    </div><br>
+    <div>
+        <input type="text" name="question_answer" value="">  <b>:Answer</b><br>
+    </div><br>
+    <div>
+        <input type="text" name="question_category_id" value="">  <b>:Category</b><br>
+    </div><br>
+    <div>
+        <button type="submit"><b>CREATE</b></button>
+    </div><br>
 
-    <input type="submit" value="create">
 </form>
 </div>
 </body>

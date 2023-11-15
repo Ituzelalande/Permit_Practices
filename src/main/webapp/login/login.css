@@ -1,17 +1,65 @@
 
 .div-p{
-    display: block;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    text-align: center;
-    border: cadetblue 2px solid;
-    border-radius: 4px;
-
-}
-body{
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+body{
+
+
+}
+
+.div{
+   display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2,1fr);
+    width: 45%;
+    height: 40%;
+    text-align: center;
+    border: cadetblue 2px solid;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.div1{
+   background-image: url("back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+
+
+}
+
+.h{
+    color: white;
+
+}
+.p{
+    color: white;
+
+}
+
+.button{
+    width: 55%;
+    background-color: rgba(8, 185, 179, 0.98);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+a{
+    color: rgba(8, 185, 179, 0.98) ;
+    text-decoration: none;
+}
+
+input{
+    padding: 10px;
+    border-color: rgba(8, 185, 179, 0.98)  ;
+}
+
+i {
+    margin-left: -30px;
+    cursor: pointer;
 }

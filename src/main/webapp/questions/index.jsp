@@ -22,20 +22,24 @@
 <html>
 <head>
     <title>questions</title>
+  <link rel="stylesheet" href="questions.css">
 </head>
 <body>
+<h2><b>Questions</b></h2>
 <div>
 
   <form action="${pageContext.request.contextPath}/api/v1/userAnswer?user_ans_user_id=1&user_ans_question_id=<%=question_id%>" method="post">
 
-    <p> <%=question.getQuestion_title_rw()%></p>
+    <p class="p"> <b><%=question.getQuestion_title_rw()%> :</b></p>
     <%
     JsonObject jsonChoices = new Gson().fromJson(question.getQuestion_choices_rw(), JsonObject.class);
     for(String key: jsonChoices.keySet()){
 
   %>
+<div class="div">
+  <p> <b><%=key%>.  <%= jsonChoices.get(key).getAsString()%></b> <input type="radio" name="user_ans_choice" value=<%=key%>></p>
 
-  <p> <%=key%>. <%= jsonChoices.get(key).getAsString()%> <input type="radio" name="user_ans_choice" value=<%=key%>></p>
+</div>
 
   <%
 

@@ -2,7 +2,7 @@
     display: block;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 60%;
     text-align: center;
     border: cadetblue 2px solid;
     border-radius: 4px;
@@ -13,4 +13,52 @@ body{
     align-items: center;
     justify-content: center;
 
+}
+
+input{
+    border-radius: 8px;
+    width: 50%;
+    height: 5%;
+    padding: 10px;
+    border-color: aqua;
+
+}
+img{
+    width: 20px;
+    margin-right: 10px;
+
+}
+hr{
+    width: 30%
+}
+
+select{
+    width: 50%;
+    height: 5%;
+    border-radius: 8px;
+    border-color: aqua;
+}
+
+span{
+    border:1px solid aqua;
+    border-radius: 8px;
+    width: 50%;
+    height: 5%;
+    display:inline-flex;
+    padding: 15px;
+
+}
+.h{
+    color: rgba(12, 245, 237, 0.98);
+}
+a{
+    color: rgba(12, 245, 237, 0.98);
+
+}
+button{
+    width: 20%;
+    padding: 20px;
+    color: white;
+    background-color: #398080;
+    border-radius: 5px;
 }

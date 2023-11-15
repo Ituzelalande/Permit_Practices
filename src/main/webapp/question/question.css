@@ -1,0 +1,36 @@
+body{
+
+    display: flex;
+   align-items: center;
+    justify-content: center;
+
+}
+
+.div{
+
+
+    background-color: lightcyan;
+    width: 70%;
+    border: 3px solid;
+    padding: 20px;
+
+}
+
+input {
+    outline: none;
+    border: none;
+    height: 20%;
+    width: 40%;
+
+}
+button{
+    color: azure;
+    background-color: black;
+    width: 20%;
+}
+
+h{
+    text-align: center;
+    width: 15%;
+
+}

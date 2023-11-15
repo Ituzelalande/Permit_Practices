@@ -1,0 +1,47 @@
+div{
+  margin-left: 10px;
+
+    width: 40%;
+
+    padding: 10px;
+
+
+}
+
+
+p{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px white ;
+    gap: 10px;
+    padding: 10px;
+    background-color: burlywood;
+
+
+}
+
+input{
+
+}
+
+.div {
+    box-shadow: 5px 5px 5px 5px white;
+    background-color: lightcyan;
+}
+button{
+    color: lightyellow;
+    background-color: burlywood;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.p{
+    outline: none;
+    border-style: none;
+    box-shadow: none;
+}
+h{
+    text-align: center;
+}
